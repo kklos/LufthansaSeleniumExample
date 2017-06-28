@@ -6,72 +6,59 @@ import org.openqa.selenium.WebElement;
 
 public class BookFlightPage {
 	protected WebDriver driver;
-    private By headerPageText = By.cssSelector(".lato-light");
-    private By createAccountLink = By.partialLinkText("Zarejestruj");
+   
     private By startPlaceTextBox = By.xpath("//input[@id='flightmanagerFlightsFormOrigin']");
     private By targetTextBox = By.xpath("//input[@id='flightmanagerFlightsFormDestination']");
-    private By loginBtn = By.xpath("//button[@type='submit' and contains(., 'Zaloguj')]");
-    private By errorMsgTxt = By.cssSelector(".alert");
-	
+    private By searchFlightBtn = By.xpath("//button[@type='submit' and contains(., 'Zaloguj')]");
+    private By inOneDestinationCheckbox = By.xpath("//input[@type='checkbox' and @id='lhfaToggleRoundtrip']");
+    private By exitDateTextBox = By.id("flightmanagerFlightsFormOutboundDateDisplay");
+    
 	public BookFlightPage(WebDriver driver) {
 		this.driver=driver;
 	}
-	
-	public String getSignInPageTitle() {
-		String pageTitle = driver.getTitle();
-		System.out.print("Page title for sign in " + pageTitle );
-		return pageTitle;
-	}
-	
-	public boolean verifySignInPageTitle() {
-		String expectedTitle = "odchudzanie, dieta odchudzająca, diety, fitness – Vitalia.pl";
-		return getSignInPageTitle().contains(expectedTitle);
-	}
-	
-	public boolean verifySignInPageText() {
-		WebElement element = driver.findElement(headerPageText);
-		String pageText = element.getText();
-		System.out.print("Sign in page text: "+pageText);
-		String expectedPageText = "Zaloguj się";
-		return pageText.contains(expectedPageText);
-	}
-		public ResultBookFlightPage clickonCreateAnAccount() {
-			WebElement element=driver.findElement(createAccountLink);
+		public ResultBookFlightPage clickonGetResultFlights() {
+			System.out.format("Get result btn was clicked");
+			WebElement element=driver.findElement(searchFlightBtn);
 			if(element.isDisplayed()||element.isEnabled())
 				element.click();
 			return new ResultBookFlightPage(driver);
-	}
-		
-		public boolean verifySignIn() {
-			enterUserName("test");
-			enterPassword("pass");
-			clickOnSignIn();
-			return getErrorMessage().contains("Nieudana autoryzacja");
+	   }
+		public void enterFromPLace(String fromPlace) {
+			System.out.format("Place to start: %s was entered \n", fromPlace);
+			WebElement fromTxtBox = driver.findElement(startPlaceTextBox);
+			if(fromTxtBox.isDisplayed())
+				fromTxtBox.sendKeys(fromPlace);
 		}
 		
-		public void enterUserName(String userName) {
-			WebElement emailTxtBox = driver.findElement(startPlaceTextBox);
-			if(emailTxtBox.isDisplayed())
-				emailTxtBox.sendKeys(userName);
+		public void enterToPlace(String toPlace) {
+			System.out.format("Place destination: %s was entered \n", toPlace);
+			WebElement toTxtBox = driver.findElement(targetTextBox);
+			if(toTxtBox.isDisplayed())
+				toTxtBox.sendKeys(toPlace);
 		}
 		
-		public void enterPassword(String password) {
-			WebElement passwordTxtBox = driver.findElement(targetTextBox);
-			if(passwordTxtBox.isDisplayed())
-				passwordTxtBox.sendKeys(password);
+		public void enterDate(String date) {
+			System.out.format("Date to start: %s was entered \n", date);
+			WebElement exitDateTxtBox = driver.findElement(exitDateTextBox);
+			if(exitDateTxtBox.isDisplayed())
+				exitDateTxtBox.sendKeys(date);
 		}
 		
-		public void clickOnSignIn() {
-			WebElement signInBtn = driver.findElement(loginBtn);
-			if(signInBtn.isDisplayed())
-				signInBtn.click();
+		public void checkInOneDestinationCheckbox(){
+			System.out.println("Checkbox in one direction was checked");	
+	    WebElement checkInOnDestCHxBox = driver.findElement(inOneDestinationCheckbox);
+		if ( checkInOnDestCHxBox.isSelected())
+			{
+				checkInOnDestCHxBox.click();
+			}
 		}
 		
-		public String getErrorMessage() {
-			String strErrorMsg = null;
-			WebElement errorMsg = driver.findElement(errorMsgTxt);
-			if(errorMsg.isDisplayed()&&errorMsg.isEnabled())
-				strErrorMsg = errorMsg.getText();
-			return strErrorMsg;
-		}
+		// see other
+		//public String getErrorMessage() {
+		//	String strErrorMsg = null;
+		//	WebElement errorMsg = driver.findElement(errorMsgTxt);
+		//	if(errorMsg.isDisplayed()&&errorMsg.isEnabled())
+		//		strErrorMsg = errorMsg.getText();
+		//	return strErrorMsg;
+		// }
 }

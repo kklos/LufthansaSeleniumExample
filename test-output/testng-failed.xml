@@ -5,6 +5,14 @@
   <parameter name="browserType" value="chrome"/>
   <test name="sample test(failed)">
     <classes>
+      <class name="com.pack.common.tests.BookFlightTest">
+        <methods>
+          <include name="verifyCreateAnAccounPage"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="initializeTestBaseSetup"/>
+        </methods>
+      </class> <!-- com.pack.common.tests.BookFlightTest -->
       <class name="com.pack.common.tests.BasePageTest">
         <methods>
           <include name="verifyHomePage"/>

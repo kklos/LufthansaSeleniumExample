@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 
 public class BasePage {
 	protected WebDriver driver;
-	private By bookButton = By.xpath("//button[@id= 'flightmanager-tab-1']");
+	private By bookButton = By.xpath("//button[@id='flightmanager-tab-1']");
 	
 	public BasePage(WebDriver driver) {
 		this.driver = driver;

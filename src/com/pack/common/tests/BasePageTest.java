@@ -22,6 +22,7 @@ public class BasePageTest extends TestBaseSetup{
 		System.out.println("Home page test...");
 		BasePage basePage = new BasePage(driver);
 		Assert.assertTrue(basePage.verifyBasePageTitle(), "Home page title doesn't match");
+		
 	}
 
 }

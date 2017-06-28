@@ -2,6 +2,8 @@ package com.pack.tools;
 
 import java.util.List;
 
+import org.openqa.selenium.WebElement;
+
 public class Tools {
 
 	public static boolean stringContainsItemFromList(String inputStr, List<String> items)
@@ -15,4 +17,6 @@ public class Tools {
 	    }
 	    return false;
 	}
+	
+	
 }

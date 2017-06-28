@@ -13,9 +13,9 @@ import com.pack.common.pageobjects.ResultBookFlightPage;
 
 public class BookFlightTest extends TestBaseSetup {
 	private WebDriver driver;
-	private BookFlightPage signInPage;
+	private BookFlightPage bookFlightPage;
 	private BasePage basePage;
-	private ResultBookFlightPage createAccountPage;
+	private ResultBookFlightPage resultBookFlightPage;
 		
 		@BeforeClass
 		public void setUp() {
@@ -23,13 +23,21 @@ public class BookFlightTest extends TestBaseSetup {
 		}
 		
 		@Test
-		public void verifyCreateAnAccounPage() {
+		public void verifyCreateAnAccounPage() throws InterruptedException {
 			System.out.println("Create An Account page test...");
 			basePage = new BasePage(driver);
-			signInPage = basePage.clickBookFlightBtn();
-			createAccountPage = signInPage.clickonCreateAnAccount();
-			Assert.assertTrue(createAccountPage.verifyPageTitle(), "Page title not matching");
-			Assert.assertTrue(createAccountPage.verifyCreateAccountPageText(), "Page text not matching");
-			Assert.assertTrue(createAccountPage.verifySignUp(), "Unable to sign up");
+			bookFlightPage = basePage.clickBookFlightBtn();
+			bookFlightPage.enterFromPLace("Warszawa");
+			bookFlightPage.enterToPlace("Paderborn");
+			bookFlightPage.checkInOneDestinationCheckbox();
+			bookFlightPage.enterDate("Śr, 28.06.2017");
+			
+			resultBookFlightPage = bookFlightPage.clickonGetResultFlights();
+			
+			Thread.sleep(90000);
+			//createAccountPage = signInPage.clickonCreateAnAccount();
+			//Assert.assertTrue(createAccountPage.verifyPageTitle(), "Page title not matching");
+			//Assert.assertTrue(createAccountPage.verifyCreateAccountPageText(), "Page text not matching");
+			//Assert.assertTrue(createAccountPage.verifySignUp(), "Unable to sign up");
 		}
 }
