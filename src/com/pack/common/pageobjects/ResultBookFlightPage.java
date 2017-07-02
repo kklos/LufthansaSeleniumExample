@@ -6,6 +6,7 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 import com.pack.tools.Tools;
 
@@ -23,6 +24,10 @@ private WebDriver driver;
 	private By positiveMsgTxt = By.cssSelector(".alert_ok");
 	private By acceptTermsOfUse = By.id("termsOfUse");
 	private By acceptProcessingOfPersonalData = By.id("agreementPrivacy");
+	
+	 private By dropDownPassengers = By.id("ADVANCED_SEARCH_FLIGHTS_NUMBER_OF_ADULTS_0");
+	 private By dropDownChildren = By.id("ADVANCED_SEARCH_FLIGHTS_NUMBER_OF_CHILDREN_0");
+	 private By dropDownInfants = By.id("ADVANCED_SEARCH_FLIGHTS_NUMBER_OF_INFANTS_0");
 	
 	private List<String> errorItems = new ArrayList<String>();
 	private boolean flaga = true;
@@ -93,6 +98,27 @@ private WebDriver driver;
 		if(passwordTxtBox.isDisplayed())
 			passwordTxtBox.sendKeys(password);
 	}
+	
+	
+	public void selectValueToDropdownPassengers(String valuePassenger) {
+		Select oSelect = new Select(driver.findElement(dropDownPassengers));
+		 
+		oSelect.selectByValue(valuePassenger);
+	}
+	
+	public void selectValueToDropdownChildren(String valueChildren) {
+		Select oSelect = new Select(driver.findElement(dropDownChildren));
+		 
+		oSelect.selectByValue(valueChildren);
+	}
+	
+	public void selectValueToDropdownInfant(String valueInfant) {
+		Select oSelect = new Select(driver.findElement(dropDownInfants));
+		 
+		oSelect.selectByValue(valueInfant);
+	}
+	
+	
 	
 	public void clickOnSignUp() {
 		WebElement signInBtn = driver.findElement(SingUpBtn);

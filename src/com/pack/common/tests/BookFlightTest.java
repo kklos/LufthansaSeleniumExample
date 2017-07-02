@@ -27,14 +27,28 @@ public class BookFlightTest extends TestBaseSetup {
 			System.out.println("Create An Account page test...");
 			basePage = new BasePage(driver);
 			bookFlightPage = basePage.clickBookFlightBtn();
-			bookFlightPage.enterFromPLace("Warszawa");
+			//bookFlightPage.enterFromPLace("Warszawa");
+			Thread.sleep(4000);
 			bookFlightPage.enterToPlace("Paderborn");
+			Thread.sleep(3000);
 			bookFlightPage.checkInOneDestinationCheckbox();
-			bookFlightPage.enterDate("Śr, 28.06.2017");
+			Thread.sleep(3000);
+			bookFlightPage.enterDate();
+			Thread.sleep(3000);
 			
-			resultBookFlightPage = bookFlightPage.clickonGetResultFlights();
+			//resultBookFlightPage = bookFlightPage.clickonGetResultFlights();
 			
-			Thread.sleep(90000);
+			//Thread.sleep(8000);
+			
+			//resultBookFlightPage.selectValueToDropdownPassengers("2");
+			
+			//Thread.sleep(5000);
+			//resultBookFlightPage.selectValueToDropdownInfant("3");
+			
+			//Thread.sleep(5000);
+			//resultBookFlightPage.selectValueToDropdownChildren("4");
+			
+			//Thread.sleep(90000);
 			//createAccountPage = signInPage.clickonCreateAnAccount();
 			//Assert.assertTrue(createAccountPage.verifyPageTitle(), "Page title not matching");
 			//Assert.assertTrue(createAccountPage.verifyCreateAccountPageText(), "Page text not matching");

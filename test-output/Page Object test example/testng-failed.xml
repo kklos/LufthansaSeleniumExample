@@ -13,14 +13,6 @@
           <include name="initializeTestBaseSetup"/>
         </methods>
       </class> <!-- com.pack.common.tests.BookFlightTest -->
-      <class name="com.pack.common.tests.BasePageTest">
-        <methods>
-          <include name="verifyHomePage"/>
-          <include name="tearDown"/>
-          <include name="setUp"/>
-          <include name="initializeTestBaseSetup"/>
-        </methods>
-      </class> <!-- com.pack.common.tests.BasePageTest -->
     </classes>
   </test> <!-- sample test(failed) -->
 </suite> <!-- Failed suite [Page Object test example] -->

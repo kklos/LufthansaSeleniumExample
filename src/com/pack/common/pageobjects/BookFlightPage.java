@@ -1,5 +1,8 @@
 package com.pack.common.pageobjects;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,9 +12,14 @@ public class BookFlightPage {
    
     private By startPlaceTextBox = By.xpath("//input[@id='flightmanagerFlightsFormOrigin']");
     private By targetTextBox = By.xpath("//input[@id='flightmanagerFlightsFormDestination']");
-    private By searchFlightBtn = By.xpath("//button[@type='submit' and contains(., 'Zaloguj')]");
+    private By searchFlightBtn = By.xpath("//button[@type='submit' and contains(., 'Szukaj')]");
     private By inOneDestinationCheckbox = By.xpath("//input[@type='checkbox' and @id='lhfaToggleRoundtrip']");
     private By exitDateTextBox = By.id("flightmanagerFlightsFormOutboundDateDisplay");
+    private By dateBtn = By.xpath("//button[@type='button' and contains(., '29')]");
+    private List<String> dateWidgetFroms = new ArrayList<String>(){".//*[@class='months-wrapper']/div[0]/div[@class='month-table']/table/tbody" };
+    //dateWi w setterze ustawić striing, by.
+    
+    //private By dateWidgetFrom2 = By.xpath(".//*[@class='months-wrapper']/div[1]/div[@class='month-table']/table/tbody");
     
 	public BookFlightPage(WebDriver driver) {
 		this.driver=driver;
@@ -37,17 +45,26 @@ public class BookFlightPage {
 				toTxtBox.sendKeys(toPlace);
 		}
 		
-		public void enterDate(String date) {
-			System.out.format("Date to start: %s was entered \n", date);
+		public void enterDate() {
+			System.out.format("Date to start was entered \n");
 			WebElement exitDateTxtBox = driver.findElement(exitDateTextBox);
+			WebElement dateWidgetFrom;
+			List<WebElement> columns;
 			if(exitDateTxtBox.isDisplayed())
-				exitDateTxtBox.sendKeys(date);
+			{
+				exitDateTxtBox.click();
+				dateWidgetFrom = driver.findElement(dateWidgetFrom1);
+				
+				
+			}
+			
+			
 		}
 		
 		public void checkInOneDestinationCheckbox(){
 			System.out.println("Checkbox in one direction was checked");	
 	    WebElement checkInOnDestCHxBox = driver.findElement(inOneDestinationCheckbox);
-		if ( checkInOnDestCHxBox.isSelected())
+		if (!checkInOnDestCHxBox.isSelected())
 			{
 				checkInOnDestCHxBox.click();
 			}

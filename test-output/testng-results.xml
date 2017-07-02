@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Page Object test example" duration-ms="289332" started-at="2017-06-28T12:43:20Z" finished-at="2017-06-28T12:48:09Z">
+  <suite name="Page Object test example" duration-ms="154326" started-at="2017-06-29T19:59:56Z" finished-at="2017-06-29T20:02:31Z">
     <groups>
     </groups>
-    <test name="sample test" duration-ms="289332" started-at="2017-06-28T12:43:20Z" finished-at="2017-06-28T12:48:09Z">
+    <test name="sample test" duration-ms="154326" started-at="2017-06-29T19:59:56Z" finished-at="2017-06-29T20:02:31Z">
       <class name="com.pack.common.tests.BookFlightTest">
-        <test-method status="PASS" signature="initializeTestBaseSetup(java.lang.String, java.lang.String)[pri:0, instance:com.pack.common.tests.BookFlightTest@4c70fda8]" name="initializeTestBaseSetup" is-config="true" duration-ms="197267" started-at="2017-06-28T14:43:20Z" finished-at="2017-06-28T14:46:37Z">
+        <test-method status="PASS" signature="initializeTestBaseSetup(java.lang.String, java.lang.String)[pri:0, instance:com.pack.common.tests.BookFlightTest@523884b2]" name="initializeTestBaseSetup" is-config="true" duration-ms="27494" started-at="2017-06-29T21:59:56Z" finished-at="2017-06-29T22:00:24Z">
           <params>
             <param index="0">
               <value>
@@ -23,15 +23,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initializeTestBaseSetup -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.pack.common.tests.BookFlightTest@4c70fda8]" name="setUp" is-config="true" duration-ms="0" started-at="2017-06-28T14:46:37Z" finished-at="2017-06-28T14:46:37Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.pack.common.tests.BookFlightTest@523884b2]" name="setUp" is-config="true" duration-ms="0" started-at="2017-06-29T22:00:24Z" finished-at="2017-06-29T22:00:24Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="verifyCreateAnAccounPage()[pri:0, instance:com.pack.common.tests.BookFlightTest@4c70fda8]" name="verifyCreateAnAccounPage" duration-ms="91120" started-at="2017-06-28T14:46:37Z" finished-at="2017-06-28T14:48:08Z">
+        <test-method status="PASS" signature="verifyCreateAnAccounPage()[pri:0, instance:com.pack.common.tests.BookFlightTest@523884b2]" name="verifyCreateAnAccounPage" duration-ms="126721" started-at="2017-06-29T22:00:24Z" finished-at="2017-06-29T22:02:30Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyCreateAnAccounPage -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.pack.common.tests.BookFlightTest@4c70fda8]" name="tearDown" is-config="true" duration-ms="933" started-at="2017-06-28T14:48:09Z" finished-at="2017-06-28T14:48:09Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.pack.common.tests.BookFlightTest@523884b2]" name="tearDown" is-config="true" duration-ms="79" started-at="2017-06-29T22:02:30Z" finished-at="2017-06-29T22:02:31Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
